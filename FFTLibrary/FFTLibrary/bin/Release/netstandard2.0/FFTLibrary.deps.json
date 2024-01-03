@@ -1,0 +1,132 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "FFTLibrary/1.0.0": {
+        "dependencies": {
+          "MathNet.Numerics": "5.0.0",
+          "MathNet.Numerics.Data.Matlab": "5.0.0",
+          "MathNet.Numerics.Data.Text": "5.0.0",
+          "MathNet.Numerics.MKL.Win-x64": "3.0.0",
+          "NETStandard.Library": "2.0.3"
+        },
+        "runtime": {
+          "FFTLibrary.dll": {}
+        }
+      },
+      "MathNet.Numerics/5.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "MathNet.Numerics.Data.Matlab/5.0.0": {
+        "dependencies": {
+          "MathNet.Numerics": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.Data.Matlab.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "MathNet.Numerics.Data.Text/5.0.0": {
+        "dependencies": {
+          "MathNet.Numerics": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.Data.Text.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "MathNet.Numerics.MKL.Win-x64/3.0.0": {
+        "dependencies": {
+          "MathNet.Numerics.Providers.MKL": "5.0.0"
+        }
+      },
+      "MathNet.Numerics.Providers.MKL/5.0.0": {
+        "dependencies": {
+          "MathNet.Numerics": "5.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/MathNet.Numerics.Providers.MKL.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.0"
+          }
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FFTLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MathNet.Numerics/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pg1W2VwaEQMAiTpGK840hZgzavnqjlCMTVSbtVCXVyT+7AX4mc1o89SPv4TBlAjhgCOo9c1Y+jZ5m3ti2YgGgA==",
+      "path": "mathnet.numerics/5.0.0",
+      "hashPath": "mathnet.numerics.5.0.0.nupkg.sha512"
+    },
+    "MathNet.Numerics.Data.Matlab/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rygMi+pyClNoRn50g9HE5DwrLPPexAevYSyUEOmb0L4zRlmUhOZvNgS/NBAtWO+W5v5qckike4v/k2ZKkAbW6Q==",
+      "path": "mathnet.numerics.data.matlab/5.0.0",
+      "hashPath": "mathnet.numerics.data.matlab.5.0.0.nupkg.sha512"
+    },
+    "MathNet.Numerics.Data.Text/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RDSDTawK3xZVuULiqpCY6LFv0LHNiKmASzOwIBc5J1KeArSFRhTnt8Fz4meL6q+hjQUcQRgVAJpFrt6Fj0kSDQ==",
+      "path": "mathnet.numerics.data.text/5.0.0",
+      "hashPath": "mathnet.numerics.data.text.5.0.0.nupkg.sha512"
+    },
+    "MathNet.Numerics.MKL.Win-x64/3.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tgp9xQlPCiIqZ+VWJo2/c7GalV+1ucJkiaV7XEh9uNFt7KkG+rKN/7J2dhdiNxAAejD0MFeMkQy08cgQhHQc+Q==",
+      "path": "mathnet.numerics.mkl.win-x64/3.0.0",
+      "hashPath": "mathnet.numerics.mkl.win-x64.3.0.0.nupkg.sha512"
+    },
+    "MathNet.Numerics.Providers.MKL/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cCOM4ImHjdbpD2iR4/6mVFq+sD0sI5hXlAYJXIKmob+20OiA7QQ259vY4GLXYOLBhy35D2QjGmBlgdzNNkuepw==",
+      "path": "mathnet.numerics.providers.mkl/5.0.0",
+      "hashPath": "mathnet.numerics.providers.mkl.5.0.0.nupkg.sha512"
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cAd7T8iHFvFT9R40MPU4tiUaDJ2ghvdQ2cn0XKG/dsVWJqT2ECHX3wHRAuxUjeVbIPMt1HZPjUOq8NKsgguy2Q==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    }
+  }
+}

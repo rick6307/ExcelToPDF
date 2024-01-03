@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "iJ7/1OnhU8FWbMB+L8rfW8r4ItqfGWzNXobTckIdL5at4XSWe3JBurdzSjT7WXvV2ikz92qAlQGJEv9kQ0Xaug==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\2239\\Documents\\C#\\FFTLibrary\\FFTLibrary\\FFTLibrary.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\2239\\.nuget\\packages\\mathnet.numerics\\5.0.0\\mathnet.numerics.5.0.0.nupkg.sha512",
+    "C:\\Users\\2239\\.nuget\\packages\\mathnet.numerics.data.matlab\\5.0.0\\mathnet.numerics.data.matlab.5.0.0.nupkg.sha512",
+    "C:\\Users\\2239\\.nuget\\packages\\mathnet.numerics.data.text\\5.0.0\\mathnet.numerics.data.text.5.0.0.nupkg.sha512",
+    "C:\\Users\\2239\\.nuget\\packages\\mathnet.numerics.mkl.win-x64\\3.0.0\\mathnet.numerics.mkl.win-x64.3.0.0.nupkg.sha512",
+    "C:\\Users\\2239\\.nuget\\packages\\mathnet.numerics.providers.mkl\\5.0.0\\mathnet.numerics.providers.mkl.5.0.0.nupkg.sha512",
+    "C:\\Users\\2239\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

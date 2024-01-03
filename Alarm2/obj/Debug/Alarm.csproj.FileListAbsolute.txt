@@ -1,0 +1,15 @@
+C:\git\MCUTBSM\Alarm\bin\Debug\Alarm.dll
+C:\git\MCUTBSM\Alarm\bin\Debug\Alarm.pdb
+C:\git\MCUTBSM\Alarm\obj\Debug\Alarm.csproj.CoreCompileInputs.cache
+C:\git\MCUTBSM\Alarm\obj\Debug\Alarm.dll
+C:\git\MCUTBSM\Alarm\obj\Debug\Alarm.pdb
+C:\git\MCUTBSM\Alarm\obj\Debug\Alarm.csproj.AssemblyReference.cache
+C:\Users\2239\Documents\C#\Alarm\bin\Debug\Alarm.dll
+C:\Users\2239\Documents\C#\Alarm\bin\Debug\Alarm.pdb
+C:\Users\2239\Documents\C#\Alarm\obj\Debug\Alarm.csprojAssemblyReference.cache
+C:\Users\2239\Documents\C#\Alarm\obj\Debug\Alarm.csproj.CoreCompileInputs.cache
+C:\Users\2239\Documents\C#\Alarm\obj\Debug\Alarm.dll
+C:\Users\2239\Documents\C#\Alarm\obj\Debug\Alarm.pdb
+C:\Users\2239\Documents\C#\Alarm\bin\Debug\Newtonsoft.Json.dll
+C:\Users\2239\Documents\C#\Alarm\bin\Debug\Newtonsoft.Json.xml
+C:\Users\2239\Documents\C#\Alarm\obj\Debug\Alarm.csproj.CopyComplete

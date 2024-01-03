@@ -1,0 +1,6 @@
+2023/03/01 11:14:04 After 發 Line 陳景旭 Uf94e6fe2a747d9381a6377abba7f06d3 : True
+2023/03/01 11:14:04 Before Update DB: UPDATE WarnLogUser SET SentTime=@SentTime, IsSent=@IsSent, ErrMessage=@ErrMessage WHERE ID=@ID;
+2023/03/01 11:14:04 After Update DB: UPDATE WarnLogUser SET SentTime=@SentTime, IsSent=@IsSent, ErrMessage=@ErrMessage WHERE ID=@ID;
+2023/03/01 11:14:04 After 發 Line XZ3 chen U00451cbafe81c58ba8c4b208d6c49cbc : True
+2023/03/01 11:14:04 Before Update DB: UPDATE WarnLogUser SET SentTime=@SentTime, IsSent=@IsSent, ErrMessage=@ErrMessage WHERE ID=@ID;
+2023/03/01 11:14:04 After Update DB: UPDATE WarnLogUser SET SentTime=@SentTime, IsSent=@IsSent, ErrMessage=@ErrMessage WHERE ID=@ID;

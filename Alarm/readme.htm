@@ -1,0 +1,107 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="zh-tw">
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<title></title>
+</head>
+
+<body>
+
+<p><em style="font-style: normal"><strong style="font-weight: 400">
+<font face="新細明體"><span lang="zh-tw">在開始使用 SMSCMD 之前 </span>必須 : </font>
+</strong></em></p>
+<ol>
+	<li><strong style="font-weight: 400"><em style="font-style: normal">
+	<font face="Book Antiqua"><span lang="zh-tw">Unzip smscmd.zip to </span>
+	</font></em><font face="Book Antiqua"><span lang="zh-tw">
+	<font color="#FF0000"><em style="font-style: normal">c:\smscmd</em></font></span></font></strong></li>
+	<li><em style="font-style: normal"><strong style="font-weight: 400">
+	<font face="新細明體"><span lang="zh-tw">至 </span></font>
+	<font face="Book Antiqua">
+	<a href="http://www.sms4mail.com" style="text-decoration: none">
+	www.sms4mail.com</a></font><font face="新細明體">
+	<a href="http://www.sms4mail.com/taiwan/smsregister.htm" style="text-decoration: none">
+	<span lang="zh-tw">註冊</span>會員<span lang="zh-tw">試用</span></a><span lang="zh-tw">或<a href="http://www.sms4mail.com/taiwan/purchase.htm" style="text-decoration: none">購買簡訊點數</a></span></font></strong></em></li>
+	<li><em style="font-style: normal"><strong style="font-weight: 400">
+	<font face="新細明體">修改 </font><font face="Book Antiqua">sms4mail.txt</font><font face="新細明體"> 
+	檔案 將</font><font face="Book Antiqua"> xxx@xxxx.xxx </font><font face="新細明體">
+	換成會員</font><font face="Book Antiqua">email</font><font face="新細明體">帳號</font><font face="Book Antiqua"> 
+	xxxxxx</font><font face="新細明體"> 換成正確密碼 請勿更動</font><font face="Book Antiqua"> 
+	sms4mail.txt</font><font face="新細明體">格式 (<span lang="zh-tw">例如</span></font></strong></em><font face="Arial" size="2">: 
+    </font><font face="Book Antiqua" size="2">email=michael@yahoo.com&amp;pwd=VBRGUE)</font></li>
+	<li><em style="font-style: normal"><strong style="font-weight: 400">
+	<font face="新細明體">直接在 </font><font face="Book Antiqua">Window Command Line</font><font face="新細明體"> 
+	輸入 </font><font face="Book Antiqua">smscmd </font><font face="新細明體">
+	即會有指令使用說明</font></strong></em></li>
+	</ol>
+
+<hr align="left" width="95%" size="1">
+
+	<p>指令說明 :<br>
+	<br>
+	smscmd &lt;text&gt; &lt;to mobile phone number&gt; [e]<br>
+	<br>
+	&lt;&gt; : 必須要有的資料&nbsp; [] : optional <br>
+	<br>
+	例子 :<br>
+	smscmd &quot;這是少於70個中英文字的測試 This is English and Chinese test&quot; 
+	&quot;0935123456,09681234556&quot;<br>
+	<br>
+	或是 <br>
+	<br>
+	smscmd &quot;This is pure English content less than 160 character test&quot; 
+	&quot;0935123456,09681234556&quot; e</p>
+	<p><b><span lang="zh-tw"><font color="#FF0000">注意 !!</font> </span></b>
+	簡訊內容請勿放 &amp; 因為 &amp; 以後的簡訊內容會被截掉 且簡訊內容需用 &quot; &quot; 夾住 </p>
+
+<hr align="left" width="95%" size="1">
+
+<p><font face="Arial" size="2"><u><strong>Called by VB/VC/C or any other programs</strong></u></font></p>
+
+<p><font face="Arial" size="2"><span lang="zh-tw">目錄需固定在</span> c:\smscmd.&nbsp; 
+<span lang="zh-tw">程式呼叫</span><b> 
+c:\smscmd\smscmd.exe </b></font><font style="FONT-SIZE: 9pt" face="Arial"><br>　</font></p>
+<p><font face="Arial" size="2" color="#000000"><u><em><strong>VB 
+Sample (copy &amp; paste) : </strong></em></u></font></p>
+	<p>　</p><center>
+	<div align="left">
+		<table border="0" width="65%" id="table2">
+			<tr>
+				<td width="73%" align="left">
+				<blockquote>
+					<p align="left">
+					<font style="FONT-SIZE: 12pt" size="2" face="Arial"><em>
+					*******sendsms function here</em></font></p>
+					<p align="left"><font style="FONT-SIZE: 12pt" face="細明體">
+					<small>Function sendsms(smstext As String, phone As String) 
+					As Variant<br>
+					Dim pid As Variant<br>
+					Dim sms As String</small></p>
+					<p align="left"><small>smstext = Mid(smstext, 1, 69)<br>
+					sms = &quot;&quot;&quot;&quot; &amp; smstext &amp; &quot;&quot;&quot; &quot; &amp; &quot;&quot;&quot;&quot; &amp; phone &amp; &quot;&quot;&quot;&quot;&nbsp;&nbsp;
+					<font color="#ff0000"><small>'</small><blink>簡訊內容需用 &quot; &quot; 夾住</blink></font><br>
+					pid = Shell(&quot;smscmd.exe &quot; &amp; sms, vbNormalFocus) 'vbHide則是隱藏執行模式<br>
+					sendsms = pid<br>
+					<br>
+					End Function</small></font></p>
+					<p align="left">
+					<font style="FONT-SIZE: 12pt" size="2" face="Arial">'<i>*****Call 
+					sendsms function</i></font><font style="FONT-SIZE: 12pt" face="細明體"></p>
+					<p align="left"><small>Dim Totext As String<br>
+					Dim Tophone As String<br>
+					Dim Retcode As Variant<br>
+					<br>
+					Totext = &quot;放簡訊內容 最多有69個中英文字&quot;<br>
+					Tophone = &quot;0928123456&quot; '多個號碼用逗號隔開如 
+					0928678901,0930123456,0935123456,0937....<br>
+					<br>
+					Retcode = sendsms(Totext, Tophone) '當Retcode =0時則執行失敗</small></p>
+					</font>
+				</blockquote>
+				</td>
+			</tr>
+		</table>
+	</div>
+	</center>
+</body>
+</html>

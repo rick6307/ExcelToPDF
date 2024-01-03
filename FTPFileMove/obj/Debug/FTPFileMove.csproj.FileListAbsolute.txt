@@ -1,0 +1,8 @@
+C:\Users\2239\Documents\C#\FTPFileMove\bin\Debug\FTPFileMove.exe.config
+C:\Users\2239\Documents\C#\FTPFileMove\bin\Debug\FTPFileMove.exe
+C:\Users\2239\Documents\C#\FTPFileMove\bin\Debug\FTPFileMove.pdb
+C:\Users\2239\Documents\C#\FTPFileMove\obj\Debug\FTPFileMove.csproj.AssemblyReference.cache
+C:\Users\2239\Documents\C#\FTPFileMove\obj\Debug\FTPFileMove.csproj.SuggestedBindingRedirects.cache
+C:\Users\2239\Documents\C#\FTPFileMove\obj\Debug\FTPFileMove.csproj.CoreCompileInputs.cache
+C:\Users\2239\Documents\C#\FTPFileMove\obj\Debug\FTPFileMove.exe
+C:\Users\2239\Documents\C#\FTPFileMove\obj\Debug\FTPFileMove.pdb

@@ -1,0 +1,12 @@
+C:\git\fubon\Alarm\bin\Release\Alarm.dll
+C:\git\fubon\Alarm\bin\Release\Newtonsoft.Json.dll
+C:\git\fubon\Alarm\obj\Release\Alarm.csproj.AssemblyReference.cache
+C:\git\fubon\Alarm\obj\Release\Alarm.csproj.CoreCompileInputs.cache
+C:\git\fubon\Alarm\obj\Release\Alarm.csproj.CopyComplete
+C:\git\fubon\Alarm\obj\Release\Alarm.dll
+C:\Users\2239\Documents\C#\Alarm\bin\Release\Alarm.dll
+C:\Users\2239\Documents\C#\Alarm\obj\Release\Alarm.csproj.CoreCompileInputs.cache
+C:\Users\2239\Documents\C#\Alarm\obj\Release\Alarm.csproj.CopyComplete
+C:\Users\2239\Documents\C#\Alarm\obj\Release\Alarm.dll
+C:\Users\2239\Documents\C#\Alarm\bin\Release\Newtonsoft.Json.dll
+C:\Users\2239\Documents\C#\Alarm\obj\Release\Alarm.csprojAssemblyReference.cache

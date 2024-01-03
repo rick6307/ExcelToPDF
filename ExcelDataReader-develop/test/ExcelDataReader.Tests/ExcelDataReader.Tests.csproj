@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyTitle>ExcelDataReader.Tests</AssemblyTitle>
+    <TargetFrameworks>net462;net6.0</TargetFrameworks>
+    <AssemblyName>ExcelDataReader.Tests</AssemblyName>
+    <PackageId>ExcelDataReader.Tests</PackageId>
+    <GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="TestResults\**" />
+    <EmbeddedResource Remove="TestResults\**" />
+    <None Remove="TestResults\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\ExcelDataReader.DataSet\ExcelDataReaderExtensions.cs" Link="DataSet\ExcelDataReaderExtensions.cs" />
+    <Compile Include="..\..\src\ExcelDataReader.DataSet\ExcelDataSetConfiguration.cs" Link="DataSet\ExcelDataSetConfiguration.cs" />
+    <Compile Include="..\..\src\ExcelDataReader.DataSet\ExcelDataTableConfiguration.cs" Link="DataSet\ExcelDataTableConfiguration.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ExcelDataReader\ExcelDataReader.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.4.0" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{82a7f48d-3b50-4b1e-b82e-3ada8210c358}" />
+  </ItemGroup>
+
+</Project>

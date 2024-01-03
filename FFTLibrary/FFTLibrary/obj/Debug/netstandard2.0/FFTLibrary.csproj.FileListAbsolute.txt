@@ -1,0 +1,10 @@
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\bin\Debug\netstandard2.0\FFTLibrary.deps.json
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\bin\Debug\netstandard2.0\FFTLibrary.dll
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\obj\Debug\netstandard2.0\FFTLibrary.csproj.CoreCompileInputs.cache
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\obj\Debug\netstandard2.0\FFTLibrary.AssemblyInfoInputs.cache
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\obj\Debug\netstandard2.0\FFTLibrary.AssemblyInfo.cs
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\bin\Debug\netstandard2.0\FFTLibrary.pdb
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\obj\Debug\netstandard2.0\FFTLibrary.dll
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\obj\Debug\netstandard2.0\FFTLibrary.pdb
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\obj\Debug\netstandard2.0\FFTLibrary.csproj.AssemblyReference.cache
+C:\Users\2239\Documents\C#\FFTLibrary\FFTLibrary\obj\Debug\netstandard2.0\FFTLibrary.GeneratedMSBuildEditorConfig.editorconfig

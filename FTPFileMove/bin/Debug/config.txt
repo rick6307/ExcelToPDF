@@ -1,0 +1,6 @@
+ftpServer=172.30.31.233
+ftpUsername=admin
+ftpPassword=admin
+remoteFolderPath=/WebDAQ01/
+localFolderPath=C:/SHM/SHMFiles/Monitor/TI22028/WebDAQ01/
+fileminsize=1968601

@@ -1,0 +1,4 @@
+C:\git\MCUTBSM\Alarm\bin\Release\Alarm.dll
+C:\git\MCUTBSM\Alarm\obj\Release\Alarm.csproj.CoreCompileInputs.cache
+C:\git\MCUTBSM\Alarm\obj\Release\Alarm.dll
+C:\git\MCUTBSM\Alarm\obj\Release\Alarm.csproj.AssemblyReference.cache

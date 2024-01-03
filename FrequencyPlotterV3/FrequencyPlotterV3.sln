@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrequencyPlotterV3", "FrequencyPlotterV3.csproj", "{EC971C30-C2D3-41A3-8F3F-FAEDEB11532E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC971C30-C2D3-41A3-8F3F-FAEDEB11532E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC971C30-C2D3-41A3-8F3F-FAEDEB11532E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC971C30-C2D3-41A3-8F3F-FAEDEB11532E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC971C30-C2D3-41A3-8F3F-FAEDEB11532E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3ABDE584-627A-4785-99F2-5C21E54FF2D2}
+	EndGlobalSection
+EndGlobal

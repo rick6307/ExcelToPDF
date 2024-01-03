@@ -1,0 +1,16 @@
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Alarm.dll
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.dll
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Alarm.pdb
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\Newtonsoft.Json.xml
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\LineAPITest.csprojAssemblyReference.cache
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\LineAPITest.csproj.GenerateResource.cache
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\LineAPITest.csproj.CoreCompileInputs.cache
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\LineAPITest.csproj.CopyComplete
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\2239\Documents\C#\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.Net.Http.Formatting.xml
