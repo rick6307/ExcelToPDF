@@ -1,5 +1,5 @@
 ID_Building=30
-maxFreq=1.0
+maxFreq=0.84
 minFreq=0.6
 Amplitude=1
 inputPath=C:\SHM\SHMFiles\Monitor\TI22028\CSV

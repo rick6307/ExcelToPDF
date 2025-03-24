@@ -43,37 +43,37 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Alarm.dll" size="32768">
-      <assemblyIdentity name="Alarm" version="1.0.8535.32073" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Alarm" version="1.0.8843.3016" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>P+ezs+gHCKk6TOyGc0MGuwCYIBPGuiWlg66DhDwu6yA=</dsig:DigestValue>
+        <dsig:DigestValue>BsC/xGvypsrwsGS/AisJjW44t4AqW2kT6K/pVbEVovI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EditFFT.exe" size="7080">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EditFFT.exe" size="6144">
       <assemblyIdentity name="EditFFT" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wYRSh3lBXcG6CqpJYgY0uVSAMIfAr4LO30Pg6RDHErc=</dsig:DigestValue>
+        <dsig:DigestValue>PCgK/uJThI2RMs5mft1StxKCwuzbJuIClCm0mlxcEJo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EditFFTData.dll" size="14336">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EditFFTData.dll" size="14848">
       <assemblyIdentity name="EditFFTData" version="0.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>habvziJeVtIB9Musajcc7WWhkDy4SYF8F5OWoVCj6wo=</dsig:DigestValue>
+        <dsig:DigestValue>WrIcPhW9uhftpAlRrIPCEBu5Q7tFM0rrmEKmLHroeVQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bcPOYPWZgtmj/FBfZ19G4eCFQ4nopWMQuTfplBFbTmg=</dsig:DigestValue>
+        <dsig:DigestValue>GQg0HXon4y8GYNvMdZF2Tg1hl7DwhRHHcJSijNsltkM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

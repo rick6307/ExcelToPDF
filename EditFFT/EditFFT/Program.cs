@@ -42,8 +42,8 @@ namespace EditFFT
                                         out string outputPath, string debugLogFileName,out bool IsOutPutFile)
         {
             ID_Building = 0;
-            maxFreq = 0;
-            minFreq = 0;
+            maxFreq = 0; //頻率分析範圍的上限值
+            minFreq = 0;//頻率分析範圍的下限值
             Amplitude = 0;
             inputPath = "";
             outputPath = "";
