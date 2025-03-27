@@ -11,133 +11,203 @@ namespace FrequencyPlotterV3
     {
         static void Main(string[] args)
         {
-
-            string logDir = @"C:\SHM\FrequencyPlotterV3\Log";
-            string debugLogFileName = $"{logDir}\\FrequencyPlotter{DateTime.Now.ToString("yyyyMMddhhmm")}.log";
-            if (!ReadInputFile(@"C:\SHM\FrequencyPlotterV3\config.txt", out int ID_Building, out double maxFreq, out double minFreq, out double maxFreq_safe, out double minFreq_safe, out string outputPath, debugLogFileName))
+            // 檢查是否有傳入 ID_Building 參數
+            if (args.Length == 0 || !int.TryParse(args[0], out int ID_Building))
             {
-                Log.log(debugLogFileName, $"{DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss")} 開啟設定檔失敗");
+                Console.WriteLine("請提供有效的 ID_Building 參數。");
+                return;
             }
 
+            // 設定日誌目錄和日誌檔案名稱
+            string logDir = @"C:\SHM\FrequencyPlotterV3\Log";
+            string debugLogFileName = $"{logDir}\\FrequencyPlotter{DateTime.Now.ToString("yyyyMMddhhmm")}.log";
 
-            // 建立 SQL Server 連線字串
-            string connectionString = "database=VM05076;server=192.168.10.129;uid=VM05076;pwd=$in0t3ch;Pooling=True";
-            // 創建一個 PlotModel 物件
+            // 讀取設定檔，並從資料庫中取得參數
+            if (!ReadInputFile(@"C:\SHM\FrequencyPlotterV3\config.txt", ID_Building, out string connstr, out double maxFreq, out double minFreq, out double maxFreq_safe, out double minFreq_safe, out string outputPath, debugLogFileName))
+            {
+                Log.log(debugLogFileName, $"{DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss")} 開啟設定檔失敗");
+                return;
+            }
 
+            // 查詢 BuildingName
+            string buildingName = GetBuildingName(connstr, ID_Building);
+            if (string.IsNullOrEmpty(buildingName))
+            {
+                Log.log(debugLogFileName, $"{DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss")} 查詢 BuildingName 失敗");
+                return;
+            }
+
+            // 創建一個 FreqData 物件來儲存頻率和時間資料
             FreqData freqdata = new FreqData
             {
                 Freq = new List<double>(),
                 Time = new List<DateTime>()
             };
 
-            // 讀取資料
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            // 使用提供的連線字串連接到資料庫並讀取資料
+            using (SqlConnection connection = new SqlConnection(connstr))
             {
-                // 建立 SQL 查詢字串 查詢當前時間的過去兩周資料
-                string query = "SELECT Time,Freq FROM dbo.BuildingFreq WHERE ID_Building =" +ID_Building.ToString()+" AND Time >= DATEADD(WEEK, -2, GETDATE());";
+                // 建立 SQL 查詢字串，查詢當前時間的過去兩周資料
+                string query = "SELECT Time, Freq FROM dbo.BuildingFreq WHERE ID_Building = @ID_Building AND Time >= DATEADD(WEEK, -2, GETDATE());";
                 SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@ID_Building", ID_Building);
                 connection.Open();
                 SqlDataReader reader = command.ExecuteReader();
-                // 建立頻率資料陣列
-                
-                
+
+                // 讀取資料並將其加入 freqdata 物件中
                 while (reader.Read())
                 {
-                    // 讀取資料欄位
                     freqdata.Freq.Add(Convert.ToDouble(reader["Freq"]));
                     freqdata.Time.Add(Convert.ToDateTime(reader["Time"]));
                 }
+
                 // 關閉資料庫連線
                 reader.Close();
                 connection.Close();
             }
-            // use LINQ and DateTime.ToOADate() to convert DateTime[] to double[]
+
+            // 使用 LINQ 和 DateTime.ToOADate() 將 DateTime[] 轉換為 double[]
             double[] xs = freqdata.Time.Select(x => x.ToOADate()).ToArray();
-            
+
             // 繪製頻率圖形
             var plt = new Plot(1024, 768);
             plt.AddScatterPoints(xs, freqdata.Freq.ToArray());
             plt.XAxis.DateTimeFormat(true);
-            //plt.PlotScatter(freqdata.time, freqdata.freq, lineWidth: 0, markerSize: 2);
-            plt.Title("富邦東京大樓頻率監測");
+            plt.Title($"{buildingName}頻率監測");
             plt.YLabel("Frequency (Hz)");
             plt.XLabel("Date");
 
-            // add axis spans
+            // 添加安全範圍的垂直區間
             Color Greencolor = Color.FromArgb(70, 173, 255, 47);
             Color Redcolor = Color.FromArgb(70, 255, 47, 47);
-            plt.AddVerticalSpan(minFreq_safe, maxFreq_safe, Greencolor, label:"安全範圍");
-            //plt.AddVerticalSpan(minFreq, minFreq_safe, Redcolor, label: "異常範圍");
-            //plt.AddVerticalSpan(maxFreq_safe, maxFreq, Redcolor);
+            plt.AddVerticalSpan(minFreq_safe, maxFreq_safe, Greencolor, label: "安全範圍");
             plt.SetAxisLimitsY(0, 1.5);
 
+            // 添加網格和圖例
             plt.Grid(true);
             plt.Legend();
-            string filepath = outputPath +@"\"+ freqdata.Time.Last().ToString("yyyyMMddHHmmss");
+
+            // 設定輸出檔案路徑並儲存圖形
+            string filepath = outputPath + @"\" + ID_Building.ToString() + @"\" + freqdata.Time.Last().ToString("yyyyMMddHHmmss");
             Directory.CreateDirectory(filepath);
-            plt.SaveFig(filepath+ @"\frequencyChart.png");
+            plt.SaveFig(filepath + @"\frequencyChart.png");
         }
+
+        // 定義 FreqData 類別來儲存頻率和時間資料
         public class FreqData
         {
             public List<double> Freq { get; set; }
             public List<DateTime> Time { get; set; }
         }
-        public static bool ReadInputFile(string filePath, out int ID_Building,
+
+        // 讀取設定檔並從資料庫中取得參數
+        public static bool ReadInputFile(string filePath, int ID_Building, out string connstr,
                                         out double maxFreq, out double minFreq,
                                         out double maxFreq_safe, out double minFreq_safe,
                                         out string outputPath, string debugLogFileName)
         {
-            ID_Building = 0;
+            connstr = "";
             maxFreq = 0;
             minFreq = 0;
             maxFreq_safe = 0;
             minFreq_safe = 0;
             outputPath = "";
             Dictionary<string, string> parameters = new Dictionary<string, string>();
+
             try
             {
+                // 讀取設定檔中的參數
                 using (StreamReader sr = new StreamReader(filePath))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)
                     {
                         // 將每一行的名稱和值分開
-                        string[] parts = line.Split('=');
-                        if (parts.Length != 2)
+                        int index = line.IndexOf('=');
+                        if (index == -1)
                         {
                             throw new Exception("Invalid input file format.");
                         }
-                        string name = parts[0].Trim();
-                        string value = parts[1].Trim();
+                        string name = line.Substring(0, index).Trim();
+                        string value = line.Substring(index + 1).Trim();
 
                         // 將參數名稱和值加入字典中
                         parameters.Add(name, value);
                     }
                 }
 
-                // 檢查字典中是否包含必要的參數
-                if (!parameters.ContainsKey("ID_Building") || !parameters.ContainsKey("maxFreq") ||
-                    !parameters.ContainsKey("minFreq") || !parameters.ContainsKey("maxFreq_safe") ||
-                    !parameters.ContainsKey("minFreq_safe")     || !parameters.ContainsKey("outputPath"))
+                // 檢查是否包含必要的參數
+                if (!parameters.ContainsKey("connstr") || !parameters.ContainsKey("outputPath"))
                 {
                     throw new Exception("Missing parameter in input file.");
                 }
 
-                // 解析各個參數的值
-                ID_Building = int.Parse(parameters["ID_Building"]);
-                maxFreq = double.Parse(parameters["maxFreq"]);
-                minFreq = double.Parse(parameters["minFreq"]);
-                maxFreq_safe = double.Parse(parameters["maxFreq_safe"]);
-                minFreq_safe = double.Parse(parameters["minFreq_safe"]);
+                // 取得連線字串和輸出路徑
+                connstr = parameters["connstr"];
                 outputPath = parameters["outputPath"];
+
+                // 使用連線字串連接到資料庫並讀取參數
+                using (SqlConnection connection = new SqlConnection(connstr))
+                {
+                    string query = "SELECT maxFreq, minFreq, Freq_U, Freq_L FROM dbo.BuildingFreqLevel WHERE ID_Building = @ID_Building";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID_Building", ID_Building);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    // 讀取資料並將其賦值給對應的變數
+                    if (reader.Read())
+                    {
+                        maxFreq = Convert.ToDouble(reader["maxFreq"]);
+                        minFreq = Convert.ToDouble(reader["minFreq"]);
+                        maxFreq_safe = Convert.ToDouble(reader["Freq_U"]);
+                        minFreq_safe = Convert.ToDouble(reader["Freq_L"]);
+                    }
+
+                    // 關閉資料庫連線
+                    reader.Close();
+                    connection.Close();
+                }
 
                 return true;
             }
             catch (Exception ex)
             {
+                // 記錄錯誤訊息
                 Log.log(debugLogFileName, $"{DateTime.Now.ToString("yyyy/MM/dd hh:mm:ss")} Error reading input file: {ex.Message}");
                 return false;
             }
+        }
+
+        // 查詢 BuildingName
+        public static string GetBuildingName(string connstr, int ID_Building)
+        {
+            string buildingName = "";
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connstr))
+                {
+                    string query = "SELECT BuildingName FROM dbo.Building WHERE ID= @ID_Building";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@ID_Building", ID_Building);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        buildingName = reader["BuildingName"].ToString();
+                    }
+
+                    reader.Close();
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error querying BuildingName: {ex.Message}");
+            }
+
+            return buildingName;
         }
     }
 }
